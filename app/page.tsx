@@ -1,69 +1,78 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+
+// این بخش عنوان و توضیحاتیه که گوگل توی نتایج جستجو نشون می‌ده
+export const metadata: Metadata = {
+  title: "کیارش مصدق | متخصص سئو و تولید محتوا",
+  description:
+    "کمک می‌کنم سایتت رو گوگل بهتر ببینه؛ از تحقیق کلمات کلیدی تا نوشتن محتوایی که هم خواننده رو جذب کنه هم رتبه بگیره.",
+};
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main dir="rtl" className="min-h-screen bg-white text-[#14181C]">
+      <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
+        <div className="grid gap-12 md:grid-cols-[1.3fr_1fr] md:items-center">
+          {/* ستون متن */}
+          <div>
+            <p className="mb-4 text-sm font-medium text-[#0F6B5C]">
+              فریلنسر سئو و تولید محتوا
+            </p>
+
+            <h1 className="text-4xl font-bold leading-tight md:text-5xl">
+              سایتت رو جوری می‌سازم که هم خواننده دوستش داشته باشه، هم گوگل.
+            </h1>
+
+            <p className="mt-6 max-w-md text-lg leading-8 text-[#4A4F55]">
+              از تحقیق کلمات کلیدی و ساختار صفحه گرفته تا نوشتن متنی که واقعاً
+              خونده می‌شه، روی سئو و تولید محتوا تمرکز دارم. این سایت رو هم
+              خودم با Next.js ساختم تا یاد گرفته‌هام رو عملی تمرین کنم.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href="/projects"
+                className="rounded-md bg-[#0F6B5C] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#0C5A4D]"
+              >
+                مشاهده نمونه‌کارها
+              </a>
+              <a
+                href="/contact"
+                className="rounded-md border border-[#14181C]/15 px-6 py-3 text-sm font-medium text-[#14181C] transition hover:border-[#14181C]/40"
+              >
+                ارتباط با من
+              </a>
+            </div>
+          </div>
+
+          {/* عنصر بصری: نمودار ساده‌ی رشد رتبه در نتایج جستجو */}
+          <div className="relative hidden md:block">
+            <svg
+              viewBox="0 0 320 220"
+              className="w-full"
+              role="img"
+              aria-label="نمودار رشد رتبه در نتایج جستجو"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              <line
+                x1="20" y1="200" x2="300" y2="200"
+                stroke="#14181C" strokeOpacity="0.15" strokeWidth="1"
+              />
+              <line
+                x1="20" y1="20" x2="20" y2="200"
+                stroke="#14181C" strokeOpacity="0.15" strokeWidth="1"
+              />
+              <polyline
+                points="20,180 70,165 120,150 170,100 220,70 270,30"
+                fill="none"
+                stroke="#0F6B5C"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <circle cx="270" cy="30" r="5" fill="#C9A227" />
+            </svg>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
